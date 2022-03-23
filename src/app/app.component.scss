@@ -1,64 +1,48 @@
-// Styles for header
-
-#header {
-    position: absolute;
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .header {
     text-align: center;
+    color: white;
     left: 0;
-    width: 100%;
-}
+    margin-bottom: 50px;
+  }
+  .footer {
+    text-align: center;
+    color: white;
+  }
 
 // Styles for menu
+
 nav {
     position: sticky;
     top: 0;
+    margin-bottom: 20px;
 }
-#navbar ul{
-    display: none;
-    background-color: #f90;
-    position: absolute;
-    top: 100%;
-  }
-  #navbar, #navbar ul{
+.navbar {
     margin: 0;
     padding: 0;
     list-style-type: none;
-  }
-  #navbar {
     height: 30px;
-    background-color: #666;
+    background-color: rgba($color: #666, $alpha: 0.5);
     padding-left: 25px;
     min-width: 470px;
-  }
-  #navbar li {
-    float: left;
-    position: relative;
-    height: 100%;
-  }
-  #navbar li a {
-    display: block;
-    padding: 6px;
-    width: 100px;
-    color: #fff;
-    text-decoration: none;
-    text-align: center;
-  }
-  #navbar ul li { float: none; }
-  #navbar li:hover { background-color: #f90; }
-  #navbar ul li:hover { background-color: #666; }
-
-  // Styles for footer
-
-  #footer {
-        position: absolute;
+    li {
+      float: left;
+      height: 100%;
+      a {
+        display: block;
+        padding: 6px;
+        width: 100px;
+        color: #fff;
+        text-decoration: none;
         text-align: center;
-        left: 0;
-        bottom: auto;
-        width: 100%;
-        height: 80px;
+      }
+    }
   }
-
-  // example
-
-  div {
-      height: 500px;
-  }
+ .navbar ul li { float: none; }
+ li:hover { 
+    background-color: rgba($color: rgb(0, 163, 0), $alpha: 1.0)
+   }

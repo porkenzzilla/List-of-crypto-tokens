@@ -1,12 +1,12 @@
-<nav>
-  <ul id="navbar">
-    <li><a href="#">Main</a></li>
-    <li><a href="#">News</a></li>
-    <li><a href="#">Else</a></li>
-  </ul>
-</nav>
-<header id="header">THIS IS HEADER</header>
-<div>Hello 1</div>
-<div>Hello 2</div>
-<div>Hello 3</div>
-<footer id="footer">THIS IS FOOTER</footer>
+<div class="wrapper">
+  <nav>
+    <ul class="navbar">
+      <li><a routerLink="/">Tokens</a></li>
+      <li><a routerLink="/news">News</a></li>
+      <li><a routerLink="/else">Else</a></li>
+    </ul>
+  </nav>
+<header class="header">THIS IS HEADER</header>
+<router-outlet></router-outlet>
+<footer class="footer">THIS IS FOOTER</footer>
+</div>
