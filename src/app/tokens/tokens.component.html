@@ -1,1 +1,17 @@
-<main>tokens works!</main>
+<main>
+    <table style='color: white'>
+        <thead>
+            <tr>
+                <th>Name & image</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let item of currentData">
+                <td>{{ item.image }}</td>
+                <td>{{ item.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
