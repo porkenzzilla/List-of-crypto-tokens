@@ -9,7 +9,8 @@ import { HttpService } from '../../http.service';
 })
 export class TokensComponent implements OnInit {
   currentData: any;
-  
+  url: string = "https://ethplorer.io";
+
   constructor(private httpService: HttpService){}
 
   ngOnInit(): void {

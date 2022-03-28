@@ -2,14 +2,20 @@
     <table style='color: white'>
         <thead>
             <tr>
-                <th>Name & image</th>
+                <th>Tokens</th>
+                <th>Price</th>
             </tr>
         </thead>
 
         <tbody>
             <tr *ngFor="let item of currentData">
-                <td>{{ item.image }}</td>
-                <td>{{ item.name }}</td>
+                <td>
+                    <img [src]="url + item.image" [alt]="item.name">
+                    {{ item.name }}
+                </td>
+                <ng-template *ngIf="item.price.rate; then thenBlock else elseBlock"></ng-template>
+                    <ng-template #thenBlock><td>{{ item.price.currency }} {{ item.price.rate | number:'1.2-2' }}</td></ng-template>
+                    <ng-template #elseBlock><td>no price</td></ng-template>
             </tr>
         </tbody>
     </table>

@@ -6,7 +6,6 @@
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     font-size: 14px;
     background: rgb(10, 10, 10);
-    max-width: 70%;
     width: 70%;
     margin: auto;
     border-collapse: collapse;
@@ -22,8 +21,11 @@
     border-bottom: 1px solid #ccc;
     color: rgb(255, 255, 255);
     padding: 9px 8px;
-    transition: .3s linear;
   }
   tr:hover td {
     color: rgb(0, 163, 0);
+  }
+
+  img {
+    width: 25px;
   }
