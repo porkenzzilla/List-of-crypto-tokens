@@ -5,21 +5,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpService } from '../http.service';
-import { TokensComponent } from './tokens/tokens.component';
-import { NewsComponent } from './news/news.component';
-import { ElseComponent } from './else/else.component';
+import { TokensModule } from './tokens/tokens.module';
+import { NewsModule } from './news/news.module';
+import { ElseModule } from './else/else.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TokensComponent,
-    NewsComponent,
-    ElseComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    TokensModule,
+    NewsModule,
+    ElseModule
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]

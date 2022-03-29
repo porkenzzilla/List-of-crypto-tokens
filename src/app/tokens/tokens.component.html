@@ -4,18 +4,20 @@
             <tr>
                 <th>Tokens</th>
                 <th>Price</th>
+                <th>Market Capitalization</th>
             </tr>
         </thead>
 
         <tbody>
             <tr *ngFor="let item of currentData">
-                <td>
+
+                 <td>
                     <img [src]="url + item.image" [alt]="item.name">
                     {{ item.name }}
-                </td>
-                <ng-template *ngIf="item.price.rate; then thenBlock else elseBlock"></ng-template>
-                    <ng-template #thenBlock><td>{{ item.price.currency }} {{ item.price.rate | number:'1.2-2' }}</td></ng-template>
-                    <ng-template #elseBlock><td>no price</td></ng-template>
+                 </td>
+                 <td>${{ item.price.rate | number:'1.2-2' }}</td>
+                 <td>{{ item.price.marketCapUsd | prettyNum }}</td> 
+                   
             </tr>
         </tbody>
     </table>
