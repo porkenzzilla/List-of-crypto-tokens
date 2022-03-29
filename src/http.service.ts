@@ -7,6 +7,6 @@ export class HttpService {
   constructor(private http: HttpClient) { }
 
   getData() {
-    return this.http.get('https://api.ethplorer.io/getTopTokens?apiKey=freekey')
+    return this.http.get('https://api.ethplorer.io/getTop?apiKey=freekey&criteria=cap');
   }
 }
