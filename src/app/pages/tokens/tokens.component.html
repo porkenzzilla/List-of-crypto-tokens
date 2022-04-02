@@ -12,12 +12,12 @@
             <tr *ngFor="let item of currentData">
 
                  <td>
-                    <img [src]="url + item.image" [alt]="item.name">
-                    {{ item.name }}
+                    <img [src]="url + item?.image" [alt]="item?.name">
+                    {{ item?.name }}
                  </td>
-                 <td>${{ item.price.rate | number:'1.2-2' }}</td>
-                 <td>{{ item.price.marketCapUsd | prettyNum }}</td> 
-                   
+                 <td>${{ item?.price?.rate | number:'1.2-2' }}</td>
+                 <td>{{ item?.price?.marketCapUsd | prettyNum }}</td>
+
             </tr>
         </tbody>
     </table>

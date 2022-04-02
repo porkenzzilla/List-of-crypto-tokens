@@ -4,10 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpService } from '../http.service';
-import { TokensModule } from './tokens/tokens.module';
-import { NewsModule } from './news/news.module';
-import { ElseModule } from './else/else.module';
+import { TokensModule } from './pages/tokens/tokens.module';
+import { NewsModule } from './pages/news/news.module';
+import { ElseModule } from './pages/else/else.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,6 @@ import { ElseModule } from './else/else.module';
     NewsModule,
     ElseModule
   ],
-  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { TokensComponent } from './tokens/tokens.component';
-import { NewsComponent } from './news/news.component';
-import { ElseComponent } from './else/else.component';
+import { TokensComponent } from './pages/tokens/tokens.component';
+import { NewsComponent } from './pages/news/news.component';
+import { ElseComponent } from './pages/else/else.component';
 
 const routes: Routes = [
   {path: "", component: TokensComponent},
