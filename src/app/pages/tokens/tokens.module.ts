@@ -5,7 +5,7 @@ import {TokensComponent} from './tokens.component'
 import {SharedModule} from '../../shared/shared.module';
 
 @NgModule({
-  declarations: [TokensComponent],
+  declarations: [TokensComponent ],
   imports: [
     CommonModule,
     SharedModule

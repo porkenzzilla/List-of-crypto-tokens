@@ -1,7 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 body {
+    font-family: "Matrix";
     height: 100vh;
     margin: 0;
     background-image: url("assets/pexels-markus-spiske-1089438.jpg");
     background-size: 100% 120%;
 }
+
+@font-face{
+    font-family: 'Matrix';
+    src: url('./assets/Matrix-MZ4P.ttf');
+    font-style: normal;
+    }

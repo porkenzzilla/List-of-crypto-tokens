@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 import {EthplorerService} from '../../core/api-services/ethplorer.service';
 
 @Component({
@@ -6,9 +6,10 @@ import {EthplorerService} from '../../core/api-services/ethplorer.service';
   templateUrl: './tokens.component.html',
   styleUrls: ['./tokens.component.scss'],
 })
-export class TokensComponent implements OnInit {
+export class TokensComponent implements OnInit{
   currentData: any;
   url: string = "https://ethplorer.io";
+  displayBoolean: boolean = false;
 
   constructor(private ethplorerService: EthplorerService) {
   }
@@ -19,5 +20,15 @@ export class TokensComponent implements OnInit {
       console.log(data.tokens)
     })
   }
+
+@ViewChild('tokensButton') tokensButton!: ElementRef;
+
+showMoreTokens(){
+  this.displayBoolean = !this.displayBoolean;
+  this.tokensButton.nativeElement.textContent === 'Show top-50' ?
+  this.tokensButton.nativeElement.textContent = 'Hide tokens' :
+  this.tokensButton.nativeElement.textContent = 'Show top-50';
+  ;
+}
 
 }
