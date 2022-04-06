@@ -37,13 +37,6 @@ export class TableOperationsComponent implements OnInit {
     }
 }
 
-// getData(criteria: string){
-//   this.ethplorerService.getData(criteria).subscribe((data: any) => {
-//     this.currentDataOperations = data.tokens
-//     console.log(data.tokens)
-//   })
-//   }
-
 @ViewChild('tokensButton') tokensButton!: ElementRef;
 
 showMoreTokens(){
@@ -53,4 +46,5 @@ showMoreTokens(){
   this.tokensButton.nativeElement.textContent = 'Show top-50';
   ;
 }
+
 }

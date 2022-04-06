@@ -11,7 +11,7 @@ export class EthplorerService {
 
   constructor(private http: HttpClient) { }
 
-  getData(): Observable<any> {
-    return this.http.get(`https://${API_URL}/getTop?apiKey=freekey&criteria=cap`);
+  getData(criteria: string): Observable<any> {
+    return this.http.get(`https://${API_URL}/getTop?apiKey=EK-rTqxQ-KXDHUff-AGmfo&criteria=${criteria}`);
   }
 }

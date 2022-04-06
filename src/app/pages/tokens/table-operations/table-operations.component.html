@@ -4,12 +4,12 @@
 <thead>
 <tr class='table-links'>
         <th class='table-links-th' colspan="2" routerLink="/">by Capitalization</th>
-        <th class='table-links-th' colspan="2" routerLink="#volume">by Volume of Trade</th>
-        <th class='table-links-th' colspan="2" routerLink="#operations">by Operations</th>
+        <th class='table-links-th' colspan="2" routerLink="/volume">by Volume of Trade</th>
+        <th class='table-links-th' colspan="2" routerLink="/operations">by Operations</th>
 </tr>
 <tr>
     <th class='table-tr'>Tokens</th>
-    <th class='table-tr'>Operations</th>
+    <th class='table-tr'>Operation</th>
     <th class='table-tr'>24h</th>
     <th class='table-tr'>7d</th>
     <th class='table-tr'>30d</th>
@@ -23,12 +23,10 @@
             <img [src]="item?.image ? url + item?.image : getTokenImageUrl(item.address, item.name)" [alt]="item?.name">
                 {{ item?.name }}
         </td>
-        <td>${{ item?.price?.rate | number:'1.2-2' }}</td>
-
-        <td>{{ item?.price?.marketCapUsd | prettyNum }}</td>
-        <td>{{ item?.price.diff }}</td>
-        <td>{{ item?.price.diff7d }}</td>
-        <td>{{ item?.price.diff30d | number:'1.2-2' }}</td>
+        <td>{{ item?.txsCount24 }}</td>
+        <td>{{ item['txsCount-1d-current'] }}</td>
+        <td>{{ item['txsCount-7d-current'] }}</td>
+        <td>{{ item['txsCount-30d-current'] }}</td>
     </ng-template>
     </tr>
     <tr *ngFor="let item of currentDataOperations; let i = index;">
@@ -38,11 +36,10 @@
             <img [src]="item?.image && item.name !== 'Holo' ? url + item?.image : getTokenImageUrl(item.address, item.name)" [alt]="item?.name">
                 {{ item?.name }}
         </td>
-        <td>${{ item?.price?.rate | number:'1.2-2' }}</td>
-        <td>{{ item?.price?.marketCapUsd | prettyNum }}</td>
-        <td>{{ item?.price.diff }}</td>
-        <td>{{ item?.price.diff7d }}</td>
-        <td>{{ item?.price.diff30d | number:'1.2-2' }}</td>
+        <td>{{ item?.txsCount24 }}</td>
+        <td>{{ item['txsCount-1d-current'] }}</td>
+        <td>{{ item['txsCount-7d-current'] }}</td>
+        <td>{{ item['txsCount-30d-current'] }}</td>
         </ng-template>
         </tr>
 </tbody>
