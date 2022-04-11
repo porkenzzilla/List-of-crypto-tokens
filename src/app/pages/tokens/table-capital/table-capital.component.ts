@@ -17,23 +17,18 @@ export class TableCapitalComponent implements OnInit {
   ngOnInit(): void {
     this.ethplorerService.getData('cap').subscribe((data: any) => {
       this.currentDataCapital = data.tokens
-      console.log('Capitalization');
-      console.log(data.tokens)
     })
   }
 
-  getTokenImageUrl(tokenAddress: string, tokenName: any): any {
-    if(tokenName === "Ethereum"){
-      return './../../assets/ETHEREUM.png';
-    }
-    else if(tokenName === "Holo"){
+  getTokenImageUrl(tokenName: any): any {
+    if(tokenName === "Holo"){
       return './../../assets/holo.png';
     }
     else if(tokenName === "Wrapped ROSE (Wormhole)"){
       return './../../assets/rose.png';
     }
     else{
-      return `https://tokens.1inch.exchange/${tokenAddress}.png`;
+      return './../../assets/ETHEREUM.png';
     }
 }
 

@@ -17,16 +17,11 @@ export class TableOperationsComponent implements OnInit {
   ngOnInit(): void {
     this.ethplorerService.getData('count').subscribe((data: any) => {
       this.currentDataOperations = data.tokens
-      console.log('Operations');
-      console.log(data.tokens)
     })
   }
 
-  getTokenImageUrl(tokenAddress: string, tokenName: any): any {
-    if(tokenName === "Ethereum"){
-      return './../../assets/ETHEREUM.png';
-    }
-    else if(tokenName === "Wrapped ROSE (Wormhole)"){
+  getTokenImageUrl(tokenName: any): any {
+    if(tokenName === "Wrapped ROSE (Wormhole)"){
       return './../../assets/rose.png';
     }
     else if(tokenName === "Multichain"){
@@ -75,7 +70,7 @@ export class TableOperationsComponent implements OnInit {
       return './../../assets/guarded-ether.png';
     }
     else{
-      return `https://tokens.1inch.exchange/${tokenAddress}.png`;
+      return './../../assets/ETHEREUM.png';
     }
 }
 

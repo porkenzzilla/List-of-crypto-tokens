@@ -21,7 +21,7 @@
     <ng-template *ngIf="i < 10; then thenBlock"></ng-template>
     <ng-template #thenBlock>
         <td>
-            <img [src]="item?.image ? url + item?.image : getTokenImageUrl(item.address, item.name)" [alt]="item?.name">
+            <img [src]="item?.image ? url + item?.image : getTokenImageUrl(item.name)" [alt]="item?.name">
                 {{ item?.name }}
         </td>
         <td>${{ item?.price?.rate | number:'1.2-2' }}</td>
@@ -35,7 +35,7 @@
     <ng-template *ngIf="i > 10 && displayBoolean; then thenBlock2"></ng-template>
     <ng-template #thenBlock2>
         <td>
-            <img [src]="item?.image ? url + item?.image : getTokenImageUrl(item.address, item.name)" [alt]="item?.name">
+            <img [src]="item?.image && item.name !== 'Holo' ? url + item?.image : getTokenImageUrl(item.name)" [alt]="item?.name">
                 {{ item?.name }}
         </td>
         <td>${{ item?.price?.rate | number:'1.2-2' }}</td>

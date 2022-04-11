@@ -17,16 +17,11 @@ export class TableVolumeComponent implements OnInit {
   ngOnInit(): void {
     this.ethplorerService.getData('trade').subscribe((data: any) => {
       this.currentDataVolume = data.tokens
-      console.log('Volume');
-      console.log(data.tokens)
     })
   }
 
-  getTokenImageUrl(tokenAddress: string, tokenName: any): any {
-    if(tokenName === "Ethereum"){
-      return './../../assets/ETHEREUM.png';
-    }
-    else if(tokenName === "Wrapped ROSE (Wormhole)"){
+  getTokenImageUrl(tokenName: any): any {
+    if(tokenName === "Wrapped ROSE (Wormhole)"){
       return './../../assets/rose.png';
     }
     else if(tokenName === "FLEX Coin"){
@@ -45,7 +40,7 @@ export class TableVolumeComponent implements OnInit {
       return './../../assets/Kava-io.webp';
     }
     else{
-      return `https://tokens.1inch.exchange/${tokenAddress}.png`;
+      return './../../assets/ETHEREUM.png';
     }
 }
 
