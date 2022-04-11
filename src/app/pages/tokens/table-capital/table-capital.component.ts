@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {EthplorerService} from '../../../core/api-services/ethplorer.service';
 
 @Component({
@@ -37,21 +37,8 @@ export class TableCapitalComponent implements OnInit {
     }
 }
 
-// getData(criteria: string){
-//   this.ethplorerService.getData(criteria).subscribe((data: any) => {
-//     this.currentDataCapital = data.tokens
-//     console.log(data.tokens)
-//   })
-//   }
-
-@ViewChild('tokensButton') tokensButton!: ElementRef;
-
 showMoreTokens(){
   this.displayBoolean = !this.displayBoolean;
-  this.tokensButton.nativeElement.textContent === 'Show top-50' ?
-  this.tokensButton.nativeElement.textContent = 'Hide tokens' :
-  this.tokensButton.nativeElement.textContent = 'Show top-50';
-  ;
 }
 
 }

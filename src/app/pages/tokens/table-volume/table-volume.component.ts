@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {EthplorerService} from '../../../core/api-services/ethplorer.service';
 
 @Component({
@@ -26,32 +26,31 @@ export class TableVolumeComponent implements OnInit {
     if(tokenName === "Ethereum"){
       return './../../assets/ETHEREUM.png';
     }
-    else if(tokenName === "Holo"){
-      return './../../assets/holo.png';
-    }
     else if(tokenName === "Wrapped ROSE (Wormhole)"){
       return './../../assets/rose.png';
+    }
+    else if(tokenName === "FLEX Coin"){
+      return './../../assets/flex-coin.png';
+    }
+    else if(tokenName === "Multichain"){
+      return './../../assets/Multichain.webp';
+    }
+    else if(tokenName === "PYR Token"){
+      return './../../assets/PYR-Token.png';
+    }
+    else if(tokenName === "Dalarnia"){
+      return './../../assets/Dalarnia.png';
+    }
+    else if(tokenName === "Kava.io"){
+      return './../../assets/Kava-io.webp';
     }
     else{
       return `https://tokens.1inch.exchange/${tokenAddress}.png`;
     }
 }
 
-// getData(criteria: string){
-//   this.ethplorerService.getData(criteria).subscribe((data: any) => {
-//     this.currentDataVolume = data.tokens
-//     console.log(data.tokens)
-//   })
-//   }
-
-  @ViewChild('tokensButton') tokensButton!: ElementRef;
-
   showMoreTokens(){
     this.displayBoolean = !this.displayBoolean;
-    this.tokensButton.nativeElement.textContent === 'Show top-50' ?
-    this.tokensButton.nativeElement.textContent = 'Hide tokens' :
-    this.tokensButton.nativeElement.textContent = 'Show top-50';
-    ;
   }
 
 }
