@@ -9,7 +9,6 @@ import {EthplorerService} from '../../../core/api-services/ethplorer.service';
 export class TableOperationsComponent implements OnInit {
   currentDataOperations: any;
   displayBoolean: boolean = false;
-  url: string = "https://ethplorer.io";
   
   constructor(private ethplorerService: EthplorerService) {
   }
@@ -19,60 +18,6 @@ export class TableOperationsComponent implements OnInit {
       this.currentDataOperations = data.tokens
     })
   }
-
-  getTokenImageUrl(tokenName: any): any {
-    if(tokenName === "Wrapped ROSE (Wormhole)"){
-      return './../../assets/rose.png';
-    }
-    else if(tokenName === "Multichain"){
-      return './../../assets/Multichain.webp';
-    }
-    else if(tokenName === "Stronger"){
-      return './../../assets/stronger.png';
-    }
-    else if(tokenName === "Zynga Metaverse"){
-      return './../../assets/Metaverse.png';
-    }
-    else if(tokenName === "Webb-DAO.io" || tokenName === "PudgyDAO.io"){
-      return './../../assets/web-dao.jpg.webp';
-    }
-    else if(tokenName === "SaitaRealty"){
-      return './../../assets/saita-realty.jpg';
-    }
-    else if(tokenName === "KOK Coin"){
-      return './../../assets/kok.webp';
-    }
-    else if(tokenName === "Atari Metaverse"){
-      return './../../assets/atari.png';
-    }
-    else if(tokenName === "Gnosis Safe"){
-      return './../../assets/gnosis.png';
-    }
-    else if(tokenName === "Terraform DAO"){
-      return './../../assets/terraform-dao.jpg';
-    }
-    else if(tokenName === "Optimistic Thales Token"){
-      return './../../assets/optimistic.png';
-    }
-    else if(tokenName === "PandaDAO"){
-      return './../../assets/panda.jpeg';
-    }
-    else if(tokenName === "Read The Manifesto"){
-      return './../../assets/read-the-manifesto.png';
-    }
-    else if(tokenName === "WeAreSatoshi"){
-      return './../../assets/we-are-satoshi.png';
-    }
-    else if(tokenName === "RETURN TO SPACE"){
-      return './../../assets/return-to-space.png';
-    }
-    else if(tokenName === "Guarded Ether"){
-      return './../../assets/guarded-ether.png';
-    }
-    else{
-      return './../../assets/ETHEREUM.png';
-    }
-}
 
 showMoreTokens(){
   this.displayBoolean = !this.displayBoolean;
