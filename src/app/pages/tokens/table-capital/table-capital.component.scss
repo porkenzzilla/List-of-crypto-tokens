@@ -1,36 +1,36 @@
 :host {
-    flex: 1 1 auto;
-  }
+  flex: 1 1 auto;
+}
 
-  .table {
-    font-size: 14px;
-    background: rgb(10, 10, 10);
-    width: 70%;
-    margin: auto;
-    border-collapse: collapse;
-    text-align: left;
-  }
-  .caption {
-    word-spacing: 5px;
-    color: white;
-    background: rgb(10, 10, 10);
-    text-align: center;
-    font-size: 35px;
-    padding-bottom: 30px;
-    font-weight: bold;
-  }
+.table {
+  font-size: 14px;
+  background: rgb(10, 10, 10);
+  width: 70%;
+  margin: auto;
+  border-collapse: collapse;
+  text-align: left;
+
   th {
     font-size: 15px;
     font-weight: normal;
     color: white;
     border-bottom: 2px solid #6678b1;
     padding: 10px 8px;
+
+    .table-footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
   }
+
   td {
     border-bottom: 1px solid #ccc;
     color: rgb(255, 255, 255);
     padding: 9px 8px;
   }
+
   tr:hover td {
     color: rgb(0, 163, 0);
   }
@@ -38,31 +38,47 @@
   img {
     width: 25px;
   }
+}
 
-  .token-button {
-   background-color: rgb(10, 10, 10);
-   color:rgb(0, 163, 0);
-   text-align: center;
-   font-size: 15px;
-  }
-  .token-button:hover {
-    color:rgb(2, 255, 36);
-  }
-
-  .table-links{
-  color:rgb(255, 255, 255);
+.caption {
+  word-spacing: 5px;
+  color: white;
+  background: rgb(10, 10, 10);
   text-align: center;
-  }
-  .table-links-th {
-    border-bottom: 4px solid #25b438;
-    width: 33%;
-    font-size: 20px;
-  }
-  .table-links-th:hover {
-    border-bottom: 4px solid rgb(2, 255, 36);
-    color: rgb(2, 255, 36);
-  }
+  font-size: 35px;
+  padding-bottom: 30px;
+  font-weight: bold;
+}
 
-  .table-tr{
-    padding-top: 30px;
-  }
+.token-button {
+  background-color: rgb(10, 10, 10);
+  color: rgb(0, 163, 0);
+  text-align: center;
+  font-size: 15px;
+  border: 0;
+  cursor: pointer;
+}
+
+.token-button:hover {
+  color: rgb(2, 255, 36);
+}
+
+.table-links {
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.table-links-th {
+  border-bottom: 4px solid #25b438;
+  width: 33%;
+  font-size: 20px;
+}
+
+.table-links-th:hover {
+  border-bottom: 4px solid rgb(2, 255, 36);
+  color: rgb(2, 255, 36);
+}
+
+.table-tr {
+  padding-top: 30px;
+}

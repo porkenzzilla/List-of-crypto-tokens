@@ -1,60 +1,45 @@
 <main>
-    <table class="table">
-        <caption class="caption">Top active tokens</caption>
-<thead>
-<tr class='table-links'>
-        <th class='table-links-th' colspan="2" routerLink="/">by Capitalization</th>
-        <th class='table-links-th' colspan="2" routerLink="/volume">by Volume of Trade</th>
-        <th class='table-links-th' colspan="2" routerLink="/operations">by Operations</th>
-</tr>
-<tr>
-    <th class='table-tr'>Tokens</th>
-    <th class='table-tr'>Price</th>
-    <th class='table-tr'>Capitalization</th>
-    <th class='table-tr'>24h</th>
-    <th class='table-tr'>7d</th>
-    <th class='table-tr'>30d</th>
-</tr>
-</thead>
-<tbody>
-    <tr *ngFor="let item of currentDataCapital; let i = index;">
-    <ng-template *ngIf="i < 10; then thenBlock"></ng-template>
-    <ng-template #thenBlock>
-        <td>
-            <img [src]="item?.image ? url + item?.image : getTokenImageUrl(item.name)" [alt]="item?.name">
-                {{ item?.name }}
-        </td>
-        <td>${{ item?.price?.rate | number:'1.2-2' }}</td>
-        <td>{{ item?.price?.marketCapUsd | prettyNum }}</td>
-        <td>{{ item?.price.diff }}%</td>
-        <td>{{ item?.price.diff7d }}%</td>
-        <td>{{ item?.price.diff30d | number:'1.2-2' }}%</td>
-    </ng-template>
+  <table class="table">
+    <caption class="caption">Top active tokens</caption>
+    <thead>
+    <tr class='table-links'>
+      <th class='table-links-th' colspan="2" routerLink="/">by Capitalization</th>
+      <th class='table-links-th' colspan="2" routerLink="/volume">by Volume of Trade</th>
+      <th class='table-links-th' colspan="2" routerLink="/operations">by Operations</th>
     </tr>
-    <tr *ngFor="let item of currentDataCapital; let i = index;">
-    <ng-template *ngIf="i > 10 && displayBoolean; then thenBlock2"></ng-template>
-    <ng-template #thenBlock2>
-        <td>
-            <img [src]="item?.image && item.name !== 'Holo' ? url + item?.image : getTokenImageUrl(item.name)" [alt]="item?.name">
-                {{ item?.name }}
-        </td>
-        <td>${{ item?.price?.rate | number:'1.2-2' }}</td>
-        <td>{{ item?.price?.marketCapUsd | prettyNum }}</td>
-        <td>{{ item?.price.diff }}</td>
-        <td>{{ item?.price.diff7d }}</td>
-        <td>{{ item?.price.diff30d | number:'1.2-2' }}</td>
-        </ng-template>
-        </tr>
-</tbody>
-<tfoot>
-    <tr><th  colspan='6'>
-        <p class='token-button' (click)='showMoreTokens()'>
-            <ng-template *ngIf="!displayBoolean; then thenBlock3 else elseBlock3"></ng-template>
-            <ng-template #thenBlock3>Show top-50</ng-template>
-            <ng-template #elseBlock3>Hide tokens</ng-template>
-        </p>
-    </th></tr>
-</tfoot>
-</table>
+    <tr>
+      <th class='table-tr'>Tokens</th>
+      <th class='table-tr'>Price</th>
+      <th class='table-tr'>Capitalization</th>
+      <th class='table-tr'>24h</th>
+      <th class='table-tr'>7d</th>
+      <th class='table-tr'>30d</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of data$ | async | slice:0:limit; let i = index;">
+      <td>
+        <img [src]="item?.image ? url + item?.image : getTokenImageUrl(item.name)" [alt]="item?.name">
+        {{ item?.name }}
+      </td>
+      <td>${{ item?.price?.rate | number:'1.2-2' }}</td>
+      <td>{{ item?.price?.marketCapUsd! | prettyNum }}</td>
+      <td>{{ item?.price?.diff }}%</td>
+      <td>{{ item?.price?.diff7d }}%</td>
+      <td>{{ item?.price?.diff30d | number:'1.2-2' }}%</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <th colspan='6'>
+        <div class="table-footer">
+          <button class='token-button' (click)='showMoreTokens()'>
+            {{ buttonText }}
+          </button>
+        </div>
+      </th>
+    </tr>
+    </tfoot>
+  </table>
 </main>
 

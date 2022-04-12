@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {EthplorerService} from '../../../core/api-services/ethplorer.service';
 
 @Component({
@@ -10,7 +10,7 @@ export class TableVolumeComponent implements OnInit {
   currentDataVolume: any;
   displayBoolean: boolean = false;
   url: string = "https://ethplorer.io";
-  
+
   constructor(private ethplorerService: EthplorerService) {
   }
 
@@ -21,30 +21,25 @@ export class TableVolumeComponent implements OnInit {
   }
 
   getTokenImageUrl(tokenName: any): any {
-    if(tokenName === "Wrapped ROSE (Wormhole)"){
+    console.log('getTokenImageUrl');
+    if (tokenName === "Wrapped ROSE (Wormhole)") {
       return './../../assets/rose.png';
-    }
-    else if(tokenName === "FLEX Coin"){
+    } else if (tokenName === "FLEX Coin") {
       return './../../assets/flex-coin.png';
-    }
-    else if(tokenName === "Multichain"){
+    } else if (tokenName === "Multichain") {
       return './../../assets/Multichain.webp';
-    }
-    else if(tokenName === "PYR Token"){
+    } else if (tokenName === "PYR Token") {
       return './../../assets/PYR-Token.png';
-    }
-    else if(tokenName === "Dalarnia"){
+    } else if (tokenName === "Dalarnia") {
       return './../../assets/Dalarnia.png';
-    }
-    else if(tokenName === "Kava.io"){
+    } else if (tokenName === "Kava.io") {
       return './../../assets/Kava-io.webp';
-    }
-    else{
+    } else {
       return './../../assets/ETHEREUM.png';
     }
-}
+  }
 
-  showMoreTokens(){
+  showMoreTokens() {
     this.displayBoolean = !this.displayBoolean;
   }
 

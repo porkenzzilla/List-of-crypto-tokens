@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {EthplorerService} from '../../../core/api-services/ethplorer.service';
+import {environment} from '../../../../environments/environment';
 
 @Component({
   selector: 'app-table-operations',
@@ -9,8 +10,8 @@ import {EthplorerService} from '../../../core/api-services/ethplorer.service';
 export class TableOperationsComponent implements OnInit {
   currentDataOperations: any;
   displayBoolean: boolean = false;
-  url: string = "https://ethplorer.io";
-  
+  url: string = environment.apiUrl;
+
   constructor(private ethplorerService: EthplorerService) {
   }
 
