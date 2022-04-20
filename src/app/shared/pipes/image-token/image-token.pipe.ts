@@ -12,51 +12,85 @@ export class ImageTokenPipe implements PipeTransform {
     }
     switch(nameLowerCase){
       case "Holo".toLowerCase():
-        return './../../assets/holo.png';
+        return './../../assets/tokens/holo.png';
       case "Wrapped ROSE (Wormhole)".toLowerCase():
-        return './../../assets/rose.png';
+        return './../../assets/tokens/rose.png';
       case "Multichain".toLowerCase():  
-        return './../../assets/Multichain.webp';
+        return './../../assets/tokens/Multichain.webp';
       case "Stronger".toLowerCase():
-       return './../../assets/stronger.png';
+       return './../../assets/tokens/stronger.png';
       case "Zynga Metaverse".toLowerCase():  
-        return './../../assets/Metaverse.png'; 
+        return './../../assets/tokens/Metaverse.png'; 
       case "Webb-DAO.io".toLowerCase():  
-        return './../../assets/web-dao.jpg.webp';
+        return './../../assets/tokens/web-dao.jpg.webp';
       case "PudgyDAO.io".toLowerCase():  
-        return './../../assets/web-dao.jpg.webp';
+        return './../../assets/tokens/web-dao.jpg.webp';
       case "SaitaRealty".toLowerCase():  
-        return './../../assets/saita-realty.jpg';
+        return './../../assets/tokens/saita-realty.jpg';
       case "KOK Coin".toLowerCase():  
-        return './../../assets/kok.webp'; 
+        return './../../assets/tokens/kok.webp'; 
       case "Atari Metaverse".toLowerCase():  
-        return './../../assets/atari.png';
+        return './../../assets/tokens/atari.png';
       case "Gnosis Safe".toLowerCase():  
-        return './../../assets/gnosis.png';
+        return './../../assets/tokens/gnosis.png';
       case "Terraform DAO".toLowerCase():  
-        return './../../assets/terraform-dao.jpg';
-      case "Optimistic Thales Token".toLowerCase():                return './../../assets/optimistic.png';
+        return './../../assets/tokens/terraform-dao.jpg';
+      case "Optimistic Thales Token".toLowerCase():
+        return './../../assets/tokens/optimistic.png';
       case "PandaDAO".toLowerCase():
-        return './../../assets/panda.jpeg';
+        return './../../assets/tokens/panda.jpeg';
       case "Read The Manifesto".toLowerCase():
-        return './../../assets/read-the-manifesto.png';
+        return './../../assets/tokens/read-the-manifesto.png';
       case "WeAreSatoshi".toLowerCase():
-        return './../../assets/we-are-satoshi.png';
+        return './../../assets/tokens/we-are-satoshi.png';
       case "RETURN TO SPACE".toLowerCase():
-        return './../../assets/return-to-space.png';
+        return './../../assets/tokens/return-to-space.png';
       case "Guarded Ether".toLowerCase():
-        return './../../assets/guarded-ether.png';
+        return './../../assets/tokens/guarded-ether.png';
       case "FLEX Coin".toLowerCase():
-        return './../../assets/flex-coin.png';
+        return './../../assets/tokens/flex-coin.png';
       case "PYR Token".toLowerCase():
-        return './../../assets/PYR-Token.png';
+        return './../../assets/tokens/PYR-Token.png';
       case "Dalarnia".toLowerCase():
-        return './../../assets/Dalarnia.png';
+        return './../../assets/tokens/Dalarnia.png';
       case "Kava.io".toLowerCase():
-        return './../../assets/Kava-io.webp';  
-        
+        return './../../assets/tokens/Kava-io.webp';  
+      case "ApeCoin".toLowerCase():
+        return './../../assets/tokens/ApeCoin.png';
+      case "Wrapped UST Token".toLowerCase():
+        return './../../assets/tokens/Wrapped-UST-Token.webp';
+      case "League of Kingdoms Arena".toLowerCase():
+        return './../../assets/tokens/League-of-Kingdoms-Arena.png';
+      case "Sandbox.claims".toLowerCase():
+        return './../../assets/tokens/sandbox-claims.png';
+      case "Nike RTFKT Metaverse".toLowerCase():
+        return './../../assets/tokens/Nike-RTFKT-Metaverse.jpg';
+      case "Pre Ocean Floor Music".toLowerCase():
+        return './../../assets/tokens/Pre-Ocean-Floor-Music.jpeg';
+      case "NCsoft Metaverse".toLowerCase():
+        return './../../assets/tokens/NCsoft-Metaverse.png';
+      case "Universal Pictures Metaverse".toLowerCase():
+        return './../../assets/tokens/Universal-Pictures-Metaverse.jpg';
+      case "Musk Metaverse".toLowerCase():
+        return './../../assets/tokens/Musk-Metaverse.webp';
+      case "Church DAO".toLowerCase():
+        return './../../assets/tokens/Church-DAO.png.jpeg';
+      case "Sanin Inu".toLowerCase():
+        return './../../assets/tokens/Sanin-Inu.png';
+      case "Katara Inu".toLowerCase():
+        return './../../assets/tokens/Katara-Inu.png.webp';
+      case "Ubisoft Metaverse".toLowerCase():
+        return './../../assets/tokens/Ubisoft-Metaverse.jpeg';
+      case "Musk 2178".toLowerCase():
+        return './../../assets/tokens/Musk-2178.png';
+      case "Heineken Metaverse".toLowerCase():
+        return './../../assets/tokens/Heineken-Metaverse.png';
+      case "Atlus Metaverse".toLowerCase():
+        return './../../assets/tokens/Atlus-Metaverse.jpg';
+      case "Project Spartan".toLowerCase():
+        return './../../assets/tokens/Project-Spartan.png';   
       default:
-        return './../../assets/ETHEREUM.png';
+        return './../../assets/tokens/ETHEREUM.png';
     }
   }
 

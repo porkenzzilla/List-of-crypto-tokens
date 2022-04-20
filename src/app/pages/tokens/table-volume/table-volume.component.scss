@@ -66,3 +66,18 @@
   .table-tr{
     padding-top: 30px;
   }
+
+  .table-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .token-button {
+      background-color: rgb(10, 10, 10);
+      color: rgb(0, 163, 0);
+      text-align: center;
+      font-size: 15px;
+      border: 0;
+      cursor: pointer;
+    }
+  }

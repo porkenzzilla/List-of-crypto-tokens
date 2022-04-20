@@ -1,0 +1,77 @@
+:host {
+    color: black;
+    text-align: center;
+    flex: 1 1 auto;
+  }
+  .decor {
+    position: relative;
+    max-width: 400px;
+    margin: 50px auto 0;
+    background: white;
+    border-radius: 30px;
+    height: auto;
+ }
+ .button{
+  display: block;
+  width: 20%;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  background: #E9EFF6;
+  line-height: 40px;
+  border-width: 0;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 30px;
+  background: #01ac01;
+  border-bottom: 4px solid #005212;
+  color: white;
+  font-size: 14px;
+  margin-left: auto;
+  margin-right: auto;
+ }
+ .select{
+   margin-bottom: 40px;
+ }
+ .h2{
+  margin-bottom: 20px;
+ }
+ .input {
+  display: block;
+  width: 40%;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  background: #E9EFF6;
+  line-height: 40px;
+  border-width: 0;
+  border-radius: 20px;
+  font-family: 'Roboto', sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type="file"] {
+    display: none;
+}
+ 
+.custom-file-upload {
+    font-size: small;
+    display: block;
+    width: 30%;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    background: #E9EFF6;
+    line-height: 40px;
+    border-width: 0;
+    border-radius: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+}
+.conteiner-input-type-file{
+  margin-top: 20px;
+}
+
+.image-downloaded{
+  width: 100px;
+}
+  

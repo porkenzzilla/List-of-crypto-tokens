@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'prettyNum'
+  name: 'appPrettyNum'
 })
 export class PrettyPipe implements PipeTransform {
 

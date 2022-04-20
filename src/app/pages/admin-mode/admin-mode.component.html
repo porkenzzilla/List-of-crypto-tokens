@@ -1,0 +1,35 @@
+<form class="decor" (ngSubmit)="submitForm(form)" #form="ngForm">
+    <div class="form-left-decoration"></div>
+    <div class="form-right-decoration"></div>
+    <div class="circle"></div>
+    <div class="form-inner">
+    <h3>Admin Mode</h3>
+    <input 
+     type="text"
+     name="username"
+     ngModel
+     placeholder="Username example: admin"
+     required
+     #username="ngModel"
+     [(ngModel)]="userName">
+     <p *ngIf="userName !== users.admin.username && username.touched"
+     [ngClass]="{'has-error': userName !== users.admin.username && username.touched}">Incorrect username</p>
+    <input
+     type="password"
+     name="password"
+     ngModel 
+     placeholder="Password example: admin"
+     required
+     #password="ngModel"
+     [(ngModel)]="userPassword">
+     <p *ngIf="userPassword !== users.admin.pass && password.touched"
+     [ngClass]="{'has-error': userPassword !== users.admin.pass && password.touched}">Incorrect password</p>
+     <ng-template *ngIf="userPassword === users.admin.pass && userName === users.admin.username; then thenBlock else elseBlock"></ng-template>
+     <ng-template #thenBlock>
+        <button class="button" type="submit" routerLink="/add/token-capitalization">Enter</button>
+     </ng-template>
+     <ng-template #elseBlock>
+        <button class="button" type="submit" disabled>Enter</button>
+     </ng-template>
+    </div>
+</form>

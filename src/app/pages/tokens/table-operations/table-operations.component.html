@@ -1,56 +1,55 @@
 <main>
     <table class="table">
-        <caption class="caption">Top active tokens</caption>
-<thead>
-<tr class='table-links'>
+      <caption class="caption">Top active tokens</caption>
+      <thead>
+      <tr class='table-links'>
         <th class='table-links-th' colspan="2" routerLink="/">by Capitalization</th>
         <th class='table-links-th' colspan="2" routerLink="/volume">by Volume of Trade</th>
         <th class='table-links-th' colspan="2" routerLink="/operations">by Operations</th>
-</tr>
-<tr>
-    <th class='table-tr'>Tokens</th>
-    <th class='table-tr'>Operation</th>
-    <th class='table-tr'>24h</th>
-    <th class='table-tr'>7d</th>
-    <th class='table-tr'>30d</th>
-</tr>
-</thead>
-<tbody>
-    <tr *ngFor="let item of currentDataOperations; let i = index;">
-    <ng-template *ngIf="i < 10; then thenBlock"></ng-template>
-    <ng-template #thenBlock>
+      </tr>
+      <tr>
+        <th class='table-tr'>Tokens</th>
+        <th class='table-tr'>Operation</th>
+        <th class='table-tr'>24h</th>
+        <th class='table-tr'>7d</th>
+        <th class='table-tr'>30d</th>
+      </tr>
+      </thead>
+      <tbody>
+        <ng-template *ngIf="storageData !== [null] && storageImage !== null; then thenBlock"></ng-template>
+        <ng-template #thenBlock>
+         <tr *ngFor="let item of storageData">
+           <td>
+             <img [src]="storageImage">
+             {{ item?.name }}
+           </td>
+           <td>{{ item?.txsCount24 }}</td>
+           <td>{{ item.txsCountCurrent1D }}</td>
+           <td>{{ item.txsCountCurrent7D }}</td>
+           <td>{{ item.txsCountCurrent30D }}</td>
+         </tr>
+        </ng-template> 
+      <tr *ngFor="let item of data$ | async | slice:0:limit; let i = index;">
         <td>
-            <img [src]="item?.image | appImageToken:item?.name"  [alt]="item?.name">
-                {{ item?.name }}
+          <img [src]="item?.image! | appImageToken:item?.name!" [alt]="item?.name">
+          {{ item?.name }}
         </td>
         <td>{{ item?.txsCount24 }}</td>
         <td>{{ item['txsCount-1d-current'] }}</td>
         <td>{{ item['txsCount-7d-current'] }}</td>
         <td>{{ item['txsCount-30d-current'] }}</td>
-    </ng-template>
-    </tr>
-    <tr *ngFor="let item of currentDataOperations; let i = index;">
-    <ng-template *ngIf="i > 10 && displayBoolean; then thenBlock2"></ng-template>
-    <ng-template #thenBlock2>
-        <td>
-            <img [src]="item?.image | appImageToken:item?.name" [alt]="item?.name">
-                {{ item?.name }}
-        </td>
-        <td>{{ item?.txsCount24 }}</td>
-        <td>{{ item['txsCount-1d-current'] }}</td>
-        <td>{{ item['txsCount-7d-current'] }}</td>
-        <td>{{ item['txsCount-30d-current'] }}</td>
-        </ng-template>
-        </tr>
-</tbody>
-<tfoot>
-    <tr><th  colspan='6'>
-        <p class='token-button' (click)='showMoreTokens()'>
-            <ng-template *ngIf="!displayBoolean; then thenBlock3 else elseBlock3"></ng-template>
-            <ng-template #thenBlock3>Show top-50</ng-template>
-            <ng-template #elseBlock3>Hide tokens</ng-template>
-        </p>
-    </th></tr>
-</tfoot>
-</table>
-</main>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <th colspan='6'>
+          <div class="table-footer">
+            <button class='token-button' (click)='showMoreTokens()'>
+              {{ buttonText }}
+            </button>
+          </div>
+        </th>
+      </tr>
+      </tfoot>
+    </table>
+  </main>

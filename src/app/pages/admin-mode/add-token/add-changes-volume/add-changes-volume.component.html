@@ -1,0 +1,40 @@
+<form (ngSubmit)="submitForm(form)" #form="ngForm">
+    <input class="input" type="text" placeholder="Token name" required
+    name="name"
+    ngModel
+    #name="ngModel"
+    [(ngModel)]="tokenName">
+    <input class="input" type="text" placeholder="Price" required
+    name="rate"
+    ngModel
+    #rate="ngModel"
+    [(ngModel)]="tokenRate">
+    <input class="input" type="text" placeholder="Volume of Trade" required
+    name="marketCapUsd"
+    ngModel
+    #marketCapUsd="ngModel"
+    [(ngModel)]="tokenMarketCapUsd">
+    <input class="input" type="text" placeholder="24h" required
+    name="volDiff1"
+    ngModel
+    #volDiff1="ngModel"
+    [(ngModel)]="tokenVolDiff1">
+    <input class="input" type="text" placeholder="7d" required
+    name="volDiff7"
+    ngModel
+    #volDiff7="ngModel"
+    [(ngModel)]="tokenVolDiff7">
+    <input class="input" type="text" placeholder="30d" required
+    name="volDiff30"
+    ngModel
+    #volDiff30="ngModel"
+    [(ngModel)]="tokenvolDiff30">
+    <div class="conteiner-input-type-file">
+    <img [src]="tokenImgSrc" class="image-downloaded">
+    <label for="file-upload" class="custom-file-upload">
+        Download image
+    </label>
+    <input id="file-upload" type="file" (change)="onImageSelected($event)">
+    </div>
+    <button class="button" type="submit" (click)="success()">Add</button>
+    </form>
