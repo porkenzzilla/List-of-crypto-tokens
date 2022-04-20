@@ -1,35 +1,35 @@
 <form (ngSubmit)="submitForm(form)" #form="ngForm">
-    <input class="input" type="text" placeholder="Token name" required
-    name="name"
-    ngModel
-    #name="ngModel"
-    [(ngModel)]="tokenName">
-    <input class="input" type="text" placeholder="Operations" required
-    name="txsCount24"
-    ngModel
-    #txsCount24="ngModel"
-    [(ngModel)]="tokenTxsCount24">
-    <input class="input" type="text" placeholder="24h" required
-    name="txsCountCurrent1D"
-    ngModel
-    #txsCountCurrent1D="ngModel"
-    [(ngModel)]="tokenTxsCountCurrent1D">
-    <input class="input" type="text" placeholder="7d" required
-    name="txsCountCurrent7D"
-    ngModel
-    #txsCountCurrent7D="ngModel"
-    [(ngModel)]="tokenTxsCountCurrent7D">
-    <input class="input" type="text" placeholder="30d" required
-    name="txsCountCurrent30D"
-    ngModel
-    #txsCountCurrent30D="ngModel"
-    [(ngModel)]="tokenTxsCountCurrent30D">
-    <div class="conteiner-input-type-file">
+  <input class="input" type="text" placeholder="Token name" required
+         name="name"
+         ngModel
+         #name="ngModel"
+         [(ngModel)]="tokenName">
+  <input class="input" type="text" placeholder="Operations" required
+         name="txsCount24"
+         ngModel
+         #txsCount24="ngModel"
+         [(ngModel)]="tokenTxsCount24">
+  <input class="input" type="text" placeholder="24h" required
+         name="txsCountCurrent1D"
+         ngModel
+         #txsCountCurrent1D="ngModel"
+         [(ngModel)]="tokenTxsCountCurrent1D">
+  <input class="input" type="text" placeholder="7d" required
+         name="txsCountCurrent7D"
+         ngModel
+         #txsCountCurrent7D="ngModel"
+         [(ngModel)]="tokenTxsCountCurrent7D">
+  <input class="input" type="text" placeholder="30d" required
+         name="txsCountCurrent30D"
+         ngModel
+         #txsCountCurrent30D="ngModel"
+         [(ngModel)]="tokenTxsCountCurrent30D">
+  <div class="conteiner-input-type-file">
     <img [src]="tokenImgSrc" class="image-downloaded">
     <label for="file-upload" class="custom-file-upload">
-        Download image
+      Download image
     </label>
     <input id="file-upload" type="file" (change)="onImageSelected($event)">
-    </div>
-    <button class="button" type="submit" (click)="success()">Add</button>
-    </form>
+  </div>
+  <button class="button" type="submit" (click)="success()">Add</button>
+</form>

@@ -30,7 +30,7 @@
             <td>{{ item?.diff7d }}%</td>
             <td>{{ item?.diff30d | number:'1.2-2' }}%</td>
           </tr>
-         </ng-template> 
+         </ng-template>
       <tr *ngFor="let item of data$ | async | slice:0:limit; let i = index;">
         <td>
           <img [src]="item?.image! | appImageToken:item?.name!" [alt]="item?.name">
