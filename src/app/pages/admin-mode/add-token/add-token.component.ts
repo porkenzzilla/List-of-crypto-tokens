@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-interface Search {
+interface Choose {
   routing: string;
   value: string;
   viewValue: string;
@@ -12,7 +12,7 @@ interface Search {
   styleUrls: ['./add-token.component.scss']
 })
 export class AddTokenComponent{
-  searchBy: Search[] = [
+  chooseBy: Choose[] = [
     {routing: '/add/token-capitalization', value: 'token-capitalization', viewValue: 'Capitalization'},
     {routing: '/add/token-volume', value: 'token-volume', viewValue: 'Volume of Trade'},
     {routing: '/add/token-operations', value: 'token-operations', viewValue: 'Operations'},

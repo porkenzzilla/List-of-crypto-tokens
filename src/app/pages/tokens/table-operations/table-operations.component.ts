@@ -3,6 +3,7 @@ import {EthplorerService} from '../../../core/api-services/ethplorer.service';
 import {Observable} from 'rxjs';
 import {Token} from '../../../core/interfaces/ethplorer.interface';
 import {tap} from 'rxjs/operators';
+import { LocalStorageService } from 'src/app/core/common-services/local-storage.service';
 
 enum BUTTON_STATE {
   normal = 'Show top-50',
@@ -19,11 +20,10 @@ export class TableOperationsComponent{
   data$: Observable<Token[]> = this.ethplorerService.getData('count').pipe(tap(x => this.dataLength = x.length));
   limit = 10;
   buttonText = BUTTON_STATE.normal;
-  storageData = [JSON.parse(localStorage.getItem('tokenOper')!)];
-  storageImage = localStorage.getItem('imageOper');
+  storageData = [this.localStorageService.getInfo('tokenOper')];
+  storageImage = this.localStorageService.getInfo('imageOper');
 
-  constructor(public ethplorerService: EthplorerService) {
-    console.log('Operations localStorage', localStorage);
+  constructor(public ethplorerService: EthplorerService, private localStorageService: LocalStorageService) {
   }
 
   showMoreTokens() {

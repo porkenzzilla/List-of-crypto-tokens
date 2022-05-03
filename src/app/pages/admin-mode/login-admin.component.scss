@@ -3,11 +3,6 @@
     text-align: center;
     flex: 1 1 auto;
   }
-
-  * {
-    box-sizing: border-box;
- }
-
  .decor {
     position: relative;
     max-width: 400px;
@@ -44,7 +39,7 @@
  }
  .form-left-decoration:after {
     top: 20px;
-    left: 10px;
+    left: 0.83vw;
  }
  .form-right-decoration:before {
     top: -20px;
@@ -52,7 +47,7 @@
  }
  .form-right-decoration:after {
     top: 20px;
-    right: 10px;
+    right: 0.83vw;
  }
  .circle {
     position: absolute;
@@ -64,18 +59,20 @@
     background: white;
  }
  .form-inner {
-    padding: 50px;
- }
+   padding: 50px;
+}
  .form-inner input {
     display: block;
-    width: 100%;
-    padding: 0 20px;
-    margin-bottom: 10px;
+    width: 80%;
+    padding: 0 1.67vw;
+    margin-bottom: 0.83vw;
     background: #E9EFF6;
     line-height: 40px;
     border-width: 0;
-    border-radius: 20px;
+    border-radius: 1.67vw;
     font-family: 'Roboto', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
  }
  .form-inner h3 {
     margin-top: 0;
@@ -86,10 +83,9 @@
  }
  .button {
     display: block;
-    width: 100%;
+    width: 80%;
     padding: 0 20px;
-    margin-bottom: 10px;
-    background: #E9EFF6;
+    margin-bottom: 0.83vw;
     line-height: 40px;
     border-width: 0;
     border-radius: 20px;
@@ -99,20 +95,19 @@
     border-bottom: 4px solid #005212;
     color: white;
     font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
  }
  .button:disabled {
      opacity: 0.5;
      cursor: not-allowed;
  }
-
 input.ng-invalid.ng-touched{
-    border: none;
-    border-radius: 2pt;
-    box-shadow: 0 0 0 1pt rgb(255, 0, 0);
-    outline: none;
-    transition: .1s;
+  color: red;
+  border: 2px solid red;
+  border-radius: 1.67vw;
+  outline: 0;
 }
-
 .has-error{
    font-size: small;
    color: red;

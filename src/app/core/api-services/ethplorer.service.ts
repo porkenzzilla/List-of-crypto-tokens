@@ -17,6 +17,6 @@ export class EthplorerService {
 
   getData(criteria: string): Observable<Token[]> {
     return this.http.get<IEthplorerResponse>(`https://${API_URL}/getTop?apiKey=EK-rTqxQ-KXDHUff-AGmfo&criteria=${criteria}`)
-    .pipe(delay(2000), map(x => x.tokens));
+    .pipe(map(x => x.tokens));
   }
 }

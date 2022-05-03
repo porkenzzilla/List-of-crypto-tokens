@@ -1,40 +1,25 @@
-<form (ngSubmit)="submitForm(form)" #form="ngForm">
-    <input class="input" type="text" placeholder="Token name" required
-    name="name"
-    ngModel
-    #name="ngModel"
-    [(ngModel)]="tokenName">
-    <input class="input" type="text" placeholder="Price" required
-    name="rate"
-    ngModel
-    #rate="ngModel"
-    [(ngModel)]="tokenRate">
-    <input class="input" type="text" placeholder="Volume of Trade" required
-    name="marketCapUsd"
-    ngModel
-    #marketCapUsd="ngModel"
-    [(ngModel)]="tokenMarketCapUsd">
-    <input class="input" type="text" placeholder="24h" required
-    name="volDiff1"
-    ngModel
-    #volDiff1="ngModel"
-    [(ngModel)]="tokenVolDiff1">
-    <input class="input" type="text" placeholder="7d" required
-    name="volDiff7"
-    ngModel
-    #volDiff7="ngModel"
-    [(ngModel)]="tokenVolDiff7">
-    <input class="input" type="text" placeholder="30d" required
-    name="volDiff30"
-    ngModel
-    #volDiff30="ngModel"
-    [(ngModel)]="tokenvolDiff30">
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+    <input class="input" type="text" placeholder="Token name"
+    formControlName="name" [ngClass]="{'has-error': form.get('name')?.invalid && form.get('name')?.touched}">
+    <input class="input" type="number" placeholder="Price" 
+    formControlName="rate" [ngClass]="{'has-error': form.get('rate')?.invalid && form.get('rate')?.touched}">
+    <input class="input" type="number" placeholder="Volume of Trade" 
+    formControlName="marketCapUsd" [ngClass]="{'has-error': form.get('marketCapUsd')?.invalid && form.get('marketCapUsd')?.touched}">
+    <input class="input" type="number" placeholder="24h"
+    formControlName="volDiff1" [ngClass]="{'has-error': form.get('volDiff1')?.invalid && form.get('volDiff1')?.touched}">
+    <input class="input" type="number" placeholder="7d" 
+    formControlName="volDiff7" [ngClass]="{'has-error': form.get('volDiff7')?.invalid && form.get('volDiff7')?.touched}">
+    <input class="input" type="number" placeholder="30d"
+    formControlName="volDiff30" [ngClass]="{'has-error': form.get('volDiff30')?.invalid && form.get('volDiff30')?.touched}">
+    <p class="message-error" *ngIf="(allControls[0].invalid && allControls[0].touched) || (allControls[1].invalid && allControls[1].touched)
+    || (allControls[2].invalid && allControls[2].touched) || (allControls[3].invalid && allControls[3].touched)
+    || (allControls[4].invalid && allControls[4].touched) || (allControls[5].invalid && allControls[5].touched)"
+    >Please fill in all fields or enter the correct data!</p>
     <div class="conteiner-input-type-file">
     <img [src]="tokenImgSrc" class="image-downloaded">
-    <label for="file-upload" class="custom-file-upload">
-        Download image
-    </label>
+    <label for="file-upload" class="custom-file-upload">Download image</label>
     <input id="file-upload" type="file" (change)="onImageSelected($event)">
-    </div>
-    <button class="button" type="submit" (click)="success()">Add</button>
-    </form>
+    </div> 
+    <button class="button" type="submit" mat-stroked-button (click)="success()"
+    [disabled]="form.invalid || this._localStorageService.getInfo('imageVol') === null">Add</button>
+</form>

@@ -15,12 +15,10 @@ export class NetworkInterceptor implements HttpInterceptor {
   constructor(public loadingService: LoadingService) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    setTimeout(()=>{
-      this.loadingService.isLoading.next(true);
-    },0)
+      this.loadingService.show();
    return next.handle(request).pipe(
       finalize(()=>{
-          this.loadingService.isLoading.next(false);
+          this.loadingService.hide();
       })
     )
   }

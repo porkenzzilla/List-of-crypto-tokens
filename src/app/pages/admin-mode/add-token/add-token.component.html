@@ -3,10 +3,11 @@
 <mat-form-field appearance="fill" class="mat-form-field">
     <mat-label>Choose by:</mat-label>
     <mat-select>
-      <mat-option *ngFor="let item of searchBy" [routerLink]="item.routing" [value]="item.value">
+      <mat-option *ngFor="let item of chooseBy" [routerLink]="item.routing" [value]="item.value">
           {{item.viewValue}}
       </mat-option>
     </mat-select>
   </mat-form-field>
 <router-outlet></router-outlet>
+</div>
     

@@ -62,11 +62,9 @@
     border-bottom: 4px solid rgb(2, 255, 36);
     color: rgb(2, 255, 36);
   }
-
   .table-tr{
     padding-top: 30px;
   }
-
   .table-footer {
     display: flex;
     justify-content: center;
@@ -80,4 +78,10 @@
       border: 0;
       cursor: pointer;
     }
+  }
+  .red{
+    color: red;
+  }
+  .green{
+    color: green;
   }

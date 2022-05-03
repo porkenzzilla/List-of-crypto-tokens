@@ -26,9 +26,9 @@
             </td>
             <td>${{ item?.rate | number:'1.2-2' }}</td>
             <td>{{ item?.marketCapUsd! | appPrettyNum }}</td>
-            <td>{{ item?.diff }}%</td>
-            <td>{{ item?.diff7d }}%</td>
-            <td>{{ item?.diff30d | number:'1.2-2' }}%</td>
+            <td appStyleTableDirective>{{ item?.diff }}%</td>
+            <td appStyleTableDirective>{{ item?.diff7d }}%</td>
+            <td appStyleTableDirective>{{ item?.diff30d | number:'1.2-2' }}%</td>
           </tr>
          </ng-template> 
       <tr *ngFor="let item of data$ | async | slice:0:limit; let i = index;">
@@ -38,9 +38,9 @@
         </td>
         <td>${{ item?.price?.rate | number:'1.2-2' }}</td>
         <td>{{ item?.price?.marketCapUsd! | appPrettyNum }}</td>
-        <td>{{ item?.price?.diff }}%</td>
-        <td>{{ item?.price?.diff7d }}%</td>
-        <td>{{ item?.price?.diff30d | number:'1.2-2' }}%</td>
+        <td appStyleTableDirective>{{ item?.price?.diff }}%</td>
+        <td appStyleTableDirective>{{ item?.price?.diff7d }}%</td>
+        <td appStyleTableDirective>{{ item?.price?.diff30d | number:'1.2-2' }}%</td>
       </tr>
       </tbody>
       <tfoot>

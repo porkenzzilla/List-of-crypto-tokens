@@ -3,6 +3,7 @@ import {EthplorerService} from '../../../core/api-services/ethplorer.service';
 import {Observable} from 'rxjs';
 import {Token} from '../../../core/interfaces/ethplorer.interface';
 import {tap} from 'rxjs/operators';
+import { LocalStorageService } from '../../../core/common-services/local-storage.service';
 
 enum BUTTON_STATE {
   normal = 'Show top-50',
@@ -19,11 +20,10 @@ export class TableCapitalComponent {
   data$: Observable<Token[]> = this.ethplorerService.getData('cap').pipe(tap(x => this.dataLength = x.length));
   limit = 10;
   buttonText = BUTTON_STATE.normal;
-  storageData = [JSON.parse(localStorage.getItem('tokenCap')!)];
-  storageImage = localStorage.getItem('imageCap');
-
-  constructor(public ethplorerService: EthplorerService) {
-    console.log('Capitalization localStorage', localStorage);
+  storageData = [this.localStorageService.getInfo('tokenCap')];
+  storageImage = this.localStorageService.getInfo('imageCap');
+ 
+  constructor(public ethplorerService: EthplorerService, private localStorageService: LocalStorageService) {
   }
 
   showMoreTokens() {

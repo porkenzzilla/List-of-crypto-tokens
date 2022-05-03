@@ -1,76 +1,90 @@
 :host {
-    color: black;
-    text-align: center;
-    flex: 1 1 auto;
-  }
-  .decor {
-    position: relative;
-    max-width: 400px;
-    margin: 50px auto 0;
-    background: white;
-    border-radius: 30px;
-    height: auto;
- }
- .button{
-  display: block;
-  width: 20%;
-  padding: 0 20px;
-  margin-bottom: 10px;
-  background: #E9EFF6;
-  line-height: 40px;
-  border-width: 0;
-  border-radius: 20px;
-  font-family: 'Roboto', sans-serif;
-  margin-top: 30px;
-  background: #01ac01;
-  border-bottom: 4px solid #005212;
-  color: white;
-  font-size: 14px;
-  margin-left: auto;
-  margin-right: auto;
- }
- .select{
-   margin-bottom: 40px;
- }
- .h2{
-  margin-bottom: 20px;
- }
- .input {
-  display: block;
-  width: 40%;
-  padding: 0 20px;
-  margin-bottom: 10px;
-  background: #E9EFF6;
-  line-height: 40px;
-  border-width: 0;
-  border-radius: 20px;
-  font-family: 'Roboto', sans-serif;
-  margin-left: auto;
-  margin-right: auto;
+  color: black;
+  text-align: center;
+  flex: 1 1 auto;
+}
+.decor {
+  position: relative;
+  max-width: 33.33vw;
+  margin: 4.17vw auto 0;
+  background: white;
+  border-radius: 2.50vw;
+  height: auto;
+}
+.button{
+display: block;
+width: 20%;
+padding: 0 1.67vw;
+margin-bottom: 0.83vw;
+margin-top: 2.50vw;
+line-height: 3.33vw;
+border-width: 0;
+border-radius: 1.67vw;
+font-family: 'Roboto', sans-serif;
+background: #01ac01;
+border-bottom: 0.33vw solid #005212;
+color: white;
+font-size: 1.17vw;
+margin-left: auto;
+margin-right: auto;
+}
+.button:disabled {
+opacity: 0.5;
+cursor: not-allowed;
+}
+.select{
+ margin-bottom: 3.33vw;
+}
+.h2{
+margin-bottom: 1.67vw;
+}
+.input {
+display: block;
+width: 40%;
+padding: 0 1.67vw;
+margin-bottom: 0.83vw;
+background: #E9EFF6;
+line-height: 3.33vw;
+border-width: 0;
+border-radius: 1.67vw;
+font-family: 'Roboto', sans-serif;
+margin-left: auto;
+margin-right: auto;
 }
 
 input[type="file"] {
-    display: none;
+  display: none;
 }
- 
+
 .custom-file-upload {
-    font-size: small;
-    display: block;
-    width: 30%;
-    padding: 0 20px;
-    margin-bottom: 10px;
-    background: #E9EFF6;
-    line-height: 40px;
-    border-width: 0;
-    border-radius: 20px;
-    font-family: 'Roboto', sans-serif;
-    margin-left: auto;
-    margin-right: auto;
+  font-size: small;
+  display: block;
+  width: 30%;
+  padding: 0 1.67vw;
+  margin-bottom: 0.83vw;
+  background: #E9EFF6;
+  line-height: 3.33vw;
+  border-width: 0;
+  border-radius: 1.67vw;
+  font-family: 'Roboto', sans-serif;
+  margin-left: auto;
+  margin-right: auto;
 }
 .conteiner-input-type-file{
-  margin-top: 20px;
+margin-top: 1.67vw;
 }
 
 .image-downloaded{
-  width: 100px;
+width: 8.33vw;
+}
+
+.message-error{
+font-size: small;
+color: red;
+}
+.has-error{
+color: red;
+border: 0.17vw solid red;
+border-radius: 1.67vw;
+outline: 0;
 }
