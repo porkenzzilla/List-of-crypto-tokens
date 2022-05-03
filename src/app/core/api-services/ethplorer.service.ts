@@ -5,13 +5,12 @@ import {Observable} from 'rxjs';
 import {delay, map} from 'rxjs/operators';
 import {IEthplorerResponse, Token} from '../interfaces/ethplorer.interface';
 
-const API_URL = "api.ethplorer.io";
+const API_URL = "api.ethplorer.io"; // @todo move to environments
 
 @Injectable({
   providedIn: 'root'
 })
 export class EthplorerService {
-
   constructor(private http: HttpClient) {
   }
 

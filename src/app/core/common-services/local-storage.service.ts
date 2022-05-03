@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class LocalStorageService {
   constructor() { }
 
-  setInfo(key: string, data: any): void {
+  setInfo(key: string, data: any): void { // @todo set type to data argument, you can't use any type
     try {
       key.toLowerCase().includes("image") ? localStorage.setItem(key, data) : localStorage.setItem(key, JSON.stringify(data));
     } catch (e) {
