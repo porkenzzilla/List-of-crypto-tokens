@@ -1,0 +1,42 @@
+<div class="container">
+  <button mat-icon-button class="close" [autofocus]="false" (click)="dialogRef.close()">
+    <mat-icon>X</mat-icon>
+  </button>
+  <div class="image">
+    <img [src]="data.image | appImageToken:data?.name!" [alt]="data.name"
+         width="100px">
+  </div>
+  <div class="info">
+    <div class="info__item">
+      <span>Name:</span>
+      <span>{{ data.name }}</span>
+    </div>
+
+    <div class="info__item">
+      <span>Operations:</span>
+      <span>{{ data.txsCount24 | number:'1.2-2' }}</span>
+    </div>
+
+    <div class="info__item">
+      <span>Symbol:</span>
+      <span>{{ data.symbol }}</span>
+    </div>
+
+    <div class="info__item">
+      <span>Website:</span>
+      <span>{{ data.website }}</span>
+    </div>
+
+    <div class="info__item">
+      <span>Twitter:</span>
+      <ng-template *ngIf="data.twitter; then thenBlock else elseBlock">
+      </ng-template>
+      <ng-template #thenBlock>
+        <span>{{ data.twitter }}</span>
+      </ng-template>
+      <ng-template #elseBlock>
+        <span>No twitter</span>
+      </ng-template>
+    </div>
+  </div>
+</div>

@@ -1,25 +1,33 @@
-import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {IUser} from '../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private isloggedIn: boolean;
-
+  private currentUserSubject: BehaviorSubject<IUser>;
+  public currentUser: Observable<IUser>;
+// currentUser не використовується, для чого він, для logout?
   constructor() {
-      this.isloggedIn=false;
+    this.currentUserSubject = new BehaviorSubject<IUser>(null!);
+    this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  isUserLoggedIn(): boolean {
-      return this.isloggedIn;
+  public get currentUserValue(): IUser {
+    return this.currentUserSubject.value;
   }
 
-  isAdminUser(username: string, password:string): Observable<boolean> {
-      if (username.toLowerCase() === 'admin' && password.toLowerCase() === 'admin') {
-          this.isloggedIn=true;
-      }
-      return of(this.isloggedIn);
+  public setUser(user: IUser) {
+    this.currentUserSubject.next(user);
+  }
+
+  public logout() {
+    // remove user from local storage to log user out
+    // localStorage.removeItem('isAuthorized');
+    // removeAllCookies();
+    // @ts-ignore
+    this.currentUserSubject.next(null);
   }
 
 }

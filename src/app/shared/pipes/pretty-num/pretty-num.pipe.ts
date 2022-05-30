@@ -21,8 +21,11 @@ export class PrettyPipe implements PipeTransform {
       }
       if(length >= 10){
           let shortNumB: number = value / Math.pow(10, 9);
-          return shortNumB.toFixed(3) + ' Billion'; 
+          return shortNumB.toFixed(3) + ' Billion';
         }
+      if(value === undefined){
+        return `${value}`;
+      }
       else{
         return value.toFixed(3)
       }

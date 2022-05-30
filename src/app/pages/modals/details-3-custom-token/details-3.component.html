@@ -1,0 +1,35 @@
+<div class="container">
+  <button mat-icon-button class="close" [autofocus]="false" (click)="dialogRef.close()">
+    <mat-icon>X</mat-icon>
+  </button>
+  <div class="image">
+      <img [src]="customData.image | appImageToken:customData.data?.name!" [alt]="customData.data.name"
+           width="100px">
+  </div>
+  <div class="info">
+    <div class="info__item">
+      <span>Name:</span>
+      <span>{{ customData.data.name }}</span>
+    </div>
+
+    <div class="info__item">
+      <span>Price:</span>
+      <span>{{ customData.data.rate | number:'1.2-2' }}</span>
+    </div>
+
+    <div class="info__item">
+      <span>Symbol:</span>
+      <span>{{ customData.data.name }}</span>
+    </div>
+
+    <div class="info__item">
+      <span>Capitalization:</span>
+      <span>{{ customData.data?.cap! | appPrettyNum }}</span>
+    </div>
+
+    <div class="info__item">
+      <span>Twitter:</span>
+        <span>No twitter</span>
+    </div>
+  </div>
+</div>

@@ -3,9 +3,9 @@
       <caption class="caption">Top active tokens</caption>
       <thead>
       <tr class='table-links'>
-        <th class='table-links-th' colspan="2" routerLink="/">by Capitalization</th>
-        <th class='table-links-th' colspan="2" routerLink="/volume">by Volume of Trade</th>
-        <th class='table-links-th' colspan="2" routerLink="/operations">by Operations</th>
+        <th class='table-links-th' colspan="2" routerLink="/" routerLinkActive="active">by Capitalization</th>
+        <th class='table-links-th' colspan="2" routerLink="/volume" routerLinkActive="active">by Volume of Trade</th>
+        <th class='table-links-th' colspan="2" routerLink="/operations" routerLinkActive="active">by Operations</th>
       </tr>
       <tr>
         <th class='table-tr'>Tokens</th>
@@ -17,21 +17,21 @@
       </tr>
       </thead>
       <tbody>
-        <ng-template *ngIf="storageData !== [null] && storageImage !== null; then thenBlock"></ng-template>
+        <ng-template *ngIf="storageData.length !== 0; then thenBlock"></ng-template>
          <ng-template #thenBlock>
-          <tr *ngFor="let item of storageData">
+          <tr *ngFor="let item of storageData" (click)="showDetailsForCustomToken(item)">
             <td>
-              <img [src]="storageImage">
-              {{ item?.name }}
+                <img [src]="item.image" [alt]="item?.data?.name">
+              {{ item?.data?.name }}
             </td>
-            <td>${{ item?.rate | number:'1.2-2' }}</td>
-            <td>{{ item?.marketCapUsd! | appPrettyNum }}</td>
-            <td appStyleTableDirective>{{ item?.diff }}%</td>
-            <td appStyleTableDirective>{{ item?.diff7d }}%</td>
-            <td appStyleTableDirective>{{ item?.diff30d | number:'1.2-2' }}%</td>
+            <td>${{ item?.data?.rate | number:'1.2-2' }}</td>
+            <td>{{ item?.data?.cap! | appPrettyNum }}</td>
+            <td appStyleTableDirective>{{ item?.data?.diff! }}%</td>
+            <td appStyleTableDirective>{{ item?.data?.diff7d! }}%</td>
+            <td appStyleTableDirective>{{ item?.data?.diff30d! | number:'1.2-2' }}%</td>
           </tr>
-         </ng-template> 
-      <tr *ngFor="let item of data$ | async | slice:0:limit; let i = index;">
+         </ng-template>
+      <tr *ngFor="let item of data$ | async | slice:0:limit; let i = index;" (click)="showDetails(item)">
         <td>
           <img [src]="item?.image! | appImageToken:item?.name!" [alt]="item?.name">
           {{ item?.name }}

@@ -20,6 +20,7 @@ export interface Token {
   cap: number;
   availableSupply: number;
   price: Price;
+  rate?: number;
   'volume-1d-current': number;
   'volume-1d-previous': number;
   'cap-1d-current': number;

@@ -7,33 +7,38 @@ export class ImageTokenPipe implements PipeTransform {
 
   transform(imageUrl: string, name: string): string {
     const nameLowerCase = name.toLowerCase();
-    if(imageUrl && nameLowerCase !== 'Holo'.toLowerCase()){
-      return `https://ethplorer.io${imageUrl}`;
+    if(imageUrl !== undefined) {
+      if (imageUrl.length > 100) {
+        return imageUrl;
+      }
     }
+    if(imageUrl && nameLowerCase !== 'Holo'.toLowerCase()){
+        return `https://ethplorer.io${imageUrl}`;
+      }
     switch(nameLowerCase){
       case "Holo".toLowerCase():
         return './../../assets/tokens/holo.png';
       case "Wrapped ROSE (Wormhole)".toLowerCase():
         return './../../assets/tokens/rose.png';
-      case "Multichain".toLowerCase():  
+      case "Multichain".toLowerCase():
         return './../../assets/tokens/Multichain.webp';
       case "Stronger".toLowerCase():
        return './../../assets/tokens/stronger.png';
-      case "Zynga Metaverse".toLowerCase():  
-        return './../../assets/tokens/Metaverse.png'; 
-      case "Webb-DAO.io".toLowerCase():  
+      case "Zynga Metaverse".toLowerCase():
+        return './../../assets/tokens/Metaverse.png';
+      case "Webb-DAO.io".toLowerCase():
         return './../../assets/tokens/web-dao.jpg.webp';
-      case "PudgyDAO.io".toLowerCase():  
+      case "PudgyDAO.io".toLowerCase():
         return './../../assets/tokens/web-dao.jpg.webp';
-      case "SaitaRealty".toLowerCase():  
+      case "SaitaRealty".toLowerCase():
         return './../../assets/tokens/saita-realty.jpg';
-      case "KOK Coin".toLowerCase():  
-        return './../../assets/tokens/kok.webp'; 
-      case "Atari Metaverse".toLowerCase():  
+      case "KOK Coin".toLowerCase():
+        return './../../assets/tokens/kok.webp';
+      case "Atari Metaverse".toLowerCase():
         return './../../assets/tokens/atari.png';
-      case "Gnosis Safe".toLowerCase():  
+      case "Gnosis Safe".toLowerCase():
         return './../../assets/tokens/gnosis.png';
-      case "Terraform DAO".toLowerCase():  
+      case "Terraform DAO".toLowerCase():
         return './../../assets/tokens/terraform-dao.jpg';
       case "Optimistic Thales Token".toLowerCase():
         return './../../assets/tokens/optimistic.png';
@@ -54,7 +59,7 @@ export class ImageTokenPipe implements PipeTransform {
       case "Dalarnia".toLowerCase():
         return './../../assets/tokens/Dalarnia.png';
       case "Kava.io".toLowerCase():
-        return './../../assets/tokens/Kava-io.webp';  
+        return './../../assets/tokens/Kava-io.webp';
       case "ApeCoin".toLowerCase():
         return './../../assets/tokens/ApeCoin.png';
       case "Wrapped UST Token".toLowerCase():
@@ -88,10 +93,11 @@ export class ImageTokenPipe implements PipeTransform {
       case "Atlus Metaverse".toLowerCase():
         return './../../assets/tokens/Atlus-Metaverse.jpg';
       case "Project Spartan".toLowerCase():
-        return './../../assets/tokens/Project-Spartan.png';   
+        return './../../assets/tokens/Project-Spartan.png';
+      case "Ethereum".toLowerCase():
+        return './../../assets/tokens/ETHEREUM.png';
       default:
         return './../../assets/tokens/ETHEREUM.png';
     }
   }
-
 }

@@ -3,7 +3,11 @@ import {EthplorerService} from '../../../core/api-services/ethplorer.service';
 import {Observable} from 'rxjs';
 import {Token} from '../../../core/interfaces/ethplorer.interface';
 import {tap} from 'rxjs/operators';
-import { LocalStorageService } from 'src/app/core/common-services/local-storage.service';
+import {Details1Component} from "../../modals/details-1/details-1.component";
+import {Details3Component} from "../../modals/details-3-custom-token/details-3.component";
+import {MatDialog} from "@angular/material/dialog";
+import {CustomDataService} from "../../../core/client-services/custom-data.service";
+import {CustomData} from "../../../core/interfaces/custom-data.interface";
 
 enum BUTTON_STATE {
   normal = 'Show top-50',
@@ -17,13 +21,21 @@ enum BUTTON_STATE {
 })
 export class TableVolumeComponent{
   dataLength = 0;
-  data$: Observable<Token[]> = this.ethplorerService.getData('trade').pipe(tap(x => this.dataLength = x.length));
   limit = 10;
   buttonText = BUTTON_STATE.normal;
-  storageData = [this.localStorageService.getInfo('tokenVol')];
-  storageImage = this.localStorageService.getInfo('imageVol');
+  storageData: CustomData[] = [];
+  data$: Observable<Token[]> = this.ethplorerService.getData('trade')
+    .pipe(tap(x => this.dataLength = x.length));
 
-  constructor(public ethplorerService: EthplorerService, private localStorageService: LocalStorageService) {
+  constructor(public ethplorerService: EthplorerService,
+              private _dialog: MatDialog, private _CDService: CustomDataService) {
+    this._CDService.getData().subscribe((json: CustomData[]) => {
+      for(let i = json.length - 1; i >= 0; i--){
+        if (json[i].id.includes('tokenVol')) {
+          this.storageData.push(json[i]);
+        }
+      }
+    });
   }
 
   showMoreTokens() {
@@ -38,7 +50,20 @@ export class TableVolumeComponent{
       this.buttonText = BUTTON_STATE.normal;
       return;
     }
+  }
 
+  showDetails(item: Token): void {
+    this._dialog.open(Details1Component, {
+      width: '450px',
+      data: item,
+    });
+  }
+
+  showDetailsForCustomToken(item: CustomData): void {
+    this._dialog.open(Details3Component, {
+      width: '450px',
+      data: item,
+    });
   }
 
 }

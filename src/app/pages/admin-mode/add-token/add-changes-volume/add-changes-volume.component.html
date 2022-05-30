@@ -1,13 +1,13 @@
 <form [formGroup]="form" (ngSubmit)="submitForm()">
     <input class="input" type="text" placeholder="Token name"
     formControlName="name" [ngClass]="{'has-error': form.get('name')?.invalid && form.get('name')?.touched}">
-    <input class="input" type="number" placeholder="Price" 
+    <input class="input" type="number" placeholder="Price"
     formControlName="rate" [ngClass]="{'has-error': form.get('rate')?.invalid && form.get('rate')?.touched}">
-    <input class="input" type="number" placeholder="Volume of Trade" 
-    formControlName="marketCapUsd" [ngClass]="{'has-error': form.get('marketCapUsd')?.invalid && form.get('marketCapUsd')?.touched}">
+    <input class="input" type="number" placeholder="Volume of Trade"
+    formControlName="cap" [ngClass]="{'has-error': form.get('cap')?.invalid && form.get('cap')?.touched}">
     <input class="input" type="number" placeholder="24h"
     formControlName="volDiff1" [ngClass]="{'has-error': form.get('volDiff1')?.invalid && form.get('volDiff1')?.touched}">
-    <input class="input" type="number" placeholder="7d" 
+    <input class="input" type="number" placeholder="7d"
     formControlName="volDiff7" [ngClass]="{'has-error': form.get('volDiff7')?.invalid && form.get('volDiff7')?.touched}">
     <input class="input" type="number" placeholder="30d"
     formControlName="volDiff30" [ngClass]="{'has-error': form.get('volDiff30')?.invalid && form.get('volDiff30')?.touched}">
@@ -19,7 +19,7 @@
     <img [src]="tokenImgSrc" class="image-downloaded">
     <label for="file-upload" class="custom-file-upload">Download image</label>
     <input id="file-upload" type="file" (change)="onImageSelected($event)">
-    </div> 
+    </div>
     <button class="button" type="submit" mat-stroked-button (click)="success()"
-    [disabled]="form.invalid || this._localStorageService.getInfo('imageVol') === null">Add</button>
+    [disabled]="form.invalid || this.tokenImgSrc === ''">Add</button>
 </form>

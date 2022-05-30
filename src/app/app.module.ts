@@ -14,6 +14,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NetworkInterceptor } from 'src/app/core/common-services/network.interceptor';
 import { AuthGuard } from './core/guards/auth.guard';
 import { AuthService } from './core/guards/auth.service';
+import { ModalsModule } from './pages/modals/modals.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AuthService } from './core/guards/auth.service';
     NewsModule,
     ElseModule,
     LoginAdminModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ModalsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

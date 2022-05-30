@@ -1,17 +1,17 @@
 <form class="decor" [formGroup]="form" (ngSubmit)="submitForm()">
-    <div class="form-left-decoration"></div>
-    <div class="form-right-decoration"></div>
-    <div class="circle"></div>
-    <div class="form-inner">
-        <h3>Admin Mode</h3>
-        <input type="text" placeholder="Username example: admin" formControlName="username">
-        <p *ngIf="form.get('username')?.invalid && form.get('username')?.touched"
-            [ngClass]="{'has-error': form.get('username')?.invalid && form.get('username')?.touched}">Incorrect username
-        </p>
-        <input type="password" placeholder="Password example: admin" formControlName="password">
-        <p *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
-            [ngClass]="{'has-error': form.get('password')?.invalid && form.get('password')?.touched}">Incorrect password
-        </p>
-        <button class="button" type="submit">Enter</button>
-    </div>
+  <div class="form-left-decoration"></div>
+  <div class="form-right-decoration"></div>
+  <div class="circle"></div>
+  <div class="form-inner">
+    <h3>Admin Mode</h3>
+    <input type="text" placeholder="Username example: MisterX" formControlName="username">
+    <p *ngIf="form.get('username')?.invalid && form.get('username')?.touched"
+       [ngClass]="{'has-error': form.get('username')?.invalid && form.get('username')?.touched}">Incorrect username
+    </p>
+    <input type="password" placeholder="Password example: 0000" formControlName="password">
+    <p *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+       [ngClass]="{'has-error': form.get('password')?.invalid && form.get('password')?.touched}">Incorrect password
+    </p>
+    <button class="button" type="submit">Enter</button>
+  </div>
 </form>

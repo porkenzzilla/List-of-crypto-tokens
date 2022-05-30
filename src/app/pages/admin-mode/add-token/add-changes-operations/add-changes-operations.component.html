@@ -1,11 +1,11 @@
 <form [formGroup]="form" (ngSubmit)="submitForm()">
  <input class="input" type="text" placeholder="Token name"
  formControlName="name" [ngClass]="{'has-error': form.get('name')?.invalid && form.get('name')?.touched}">
- <input class="input" type="number" placeholder="Operations" 
+ <input class="input" type="number" placeholder="Operations"
  formControlName="txsCount24" [ngClass]="{'has-error': form.get('txsCount24')?.invalid && form.get('txsCount24')?.touched}">
  <input class="input" type="number" placeholder="24h"
  formControlName="txsCountCurrent1D" [ngClass]="{'has-error': form.get('txsCountCurrent1D')?.invalid && form.get('txsCountCurrent1D')?.touched}">
- <input class="input" type="number" placeholder="7d" 
+ <input class="input" type="number" placeholder="7d"
  formControlName="txsCountCurrent7D" [ngClass]="{'has-error': form.get('txsCountCurrent7D')?.invalid && form.get('txsCountCurrent7D')?.touched}">
  <input class="input" type="number" placeholder="30d"
  formControlName="txsCountCurrent30D" [ngClass]="{'has-error': form.get('txsCountCurrent30D')?.invalid && form.get('txsCountCurrent30D')?.touched}">
@@ -17,7 +17,7 @@
   <img [src]="tokenImgSrc" class="image-downloaded">
   <label for="file-upload" class="custom-file-upload">Download image</label>
   <input id="file-upload" type="file" (change)="onImageSelected($event)">
- </div> 
+ </div>
  <button class="button" type="submit" mat-stroked-button (click)="success()"
- [disabled]="form.invalid || this._localStorageService.getInfo('imageOper') === null">Add</button>
+ [disabled]="form.invalid || this.tokenImgSrc === ''">Add</button>
 </form>

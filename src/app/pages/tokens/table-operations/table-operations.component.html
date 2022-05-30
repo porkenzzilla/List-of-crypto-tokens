@@ -4,8 +4,8 @@
       <thead>
       <tr class='table-links'>
         <th class='table-links-th' colspan="2" routerLink="/">by Capitalization</th>
-        <th class='table-links-th' colspan="2" routerLink="/volume">by Volume of Trade</th>
-        <th class='table-links-th' colspan="2" routerLink="/operations">by Operations</th>
+        <th class='table-links-th' colspan="2" routerLink="/volume" routerLinkActive="active">by Volume of Trade</th>
+        <th class='table-links-th' colspan="2" routerLink="/operations" routerLinkActive="active">by Operations</th>
       </tr>
       <tr>
         <th class='table-tr'>Tokens</th>
@@ -16,20 +16,20 @@
       </tr>
       </thead>
       <tbody>
-        <ng-template *ngIf="storageData !== [null] && storageImage !== null; then thenBlock"></ng-template>
+        <ng-template *ngIf="storageData.length !== 0; then thenBlock"></ng-template>
         <ng-template #thenBlock>
-         <tr *ngFor="let item of storageData">
+         <tr *ngFor="let item of storageData" (click)="showDetailsForCustomToken(item)">
            <td>
-             <img [src]="storageImage">
-             {{ item?.name }}
+             <img [src]="item.image" [alt]="item?.data?.name">
+             {{ item?.data?.name }}
            </td>
-           <td>{{ item?.txsCount24 }}</td>
-           <td>{{ item.txsCountCurrent1D }}</td>
-           <td>{{ item.txsCountCurrent7D }}</td>
-           <td>{{ item.txsCountCurrent30D }}</td>
+           <td>{{ item?.data?.txsCount24 }}</td>
+           <td>{{ item.data?.txsCountCurrent1D }}</td>
+           <td>{{ item.data?.txsCountCurrent7D }}</td>
+           <td>{{ item.data?.txsCountCurrent30D }}</td>
          </tr>
-        </ng-template> 
-      <tr *ngFor="let item of data$ | async | slice:0:limit; let i = index;">
+        </ng-template>
+      <tr *ngFor="let item of data$ | async | slice:0:limit; let i = index;" (click)="showDetails(item)">
         <td>
           <img [src]="item?.image! | appImageToken:item?.name!" [alt]="item?.name">
           {{ item?.name }}
